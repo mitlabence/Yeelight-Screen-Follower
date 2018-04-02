@@ -58,7 +58,7 @@ except FileNotFoundError:
 bulbs = list()	
 f = open("ip.txt", "r")
 for line in f:	#strip(): eltűnteti a \n-eket
-	bulbs.append(yeelight.Bulb("192.168.1." + line.strip(), effect="smooth", duration=1000))
+	bulbs.append(yeelight.Bulb("192.168.1." + line.strip(), effect="smooth", duration=1100))
 """	
 teszt
 for i in range(len(bulbs)):
@@ -91,7 +91,7 @@ while True:
 			continue
 		else:
 			if turned_off[i]:
-				bulbs[i].turn_on(effect="smooth", duration = 1000)
+				bulbs[i].turn_on(effect="smooth", duration = 1100)
 				turned_off[i] = False
 		unadj_hsv = rgb_to_hsv(r_coord, g_coord, b_coord)
 		if not(value_manually_set):
@@ -101,7 +101,7 @@ while True:
 	bulbs[0].set_hsv(coords[0][0], coords[0][1], coords[0][2])
 	bulbs[1].set_hsv(coords[1][0], coords[1][1], coords[1][2])
 	bulbs[2].set_hsv(coords[2][0], coords[2][1], coords[2][2])
-	time.sleep(1)
+	time.sleep(1.1)
 
 
 """
